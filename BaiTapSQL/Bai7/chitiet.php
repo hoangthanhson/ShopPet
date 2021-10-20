@@ -10,9 +10,10 @@
 <?php
     require("../config.php");
     $conn = new mysqli($hostname,$username,$password,$dbname);
-    $query = "select * from sua";
+    $id = $_GET['id'];
+    $query = "select * from sua where Ma_sua = '$id' ";   
     $result = $conn->query($query);
-    while($row=$result->fetch_array()){
+    $row=$result->fetch_array();
             echo "<table align='center' border='true' width='550px'>";
             echo "<tr>";
             echo "<td colspan='2' align='center' bgcolor='pink' style='color:brown'>".$row['Ten_sua']."</td>";
@@ -26,7 +27,6 @@
             echo "</tr>";
             echo "<td>"."<a href='javascript:history.back()'>Quay lại</a>"."</td>";
             echo "</table>";
-    }
 ?>
     
 </body>
