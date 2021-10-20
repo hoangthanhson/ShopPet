@@ -16,6 +16,9 @@
     }
 </script> 
 <body>
+    <?php
+    require("./include/config.php");
+    ?>
     <!-- header -->
     <?php include "./include/header.php" ?>
     <!-- End header -->
@@ -23,135 +26,63 @@
     <section class="wrapper">
         <div class="products">
             <ul>
-                <li class="main-product">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./img/cun1.jpg"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">Chó Pug</h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">25000đ</span>
-                            </div>
-                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                <?php
+                if(isset($_GET['search']) && !empty($_GET['search'])){
+                    $search = $_GET['search'];
+                    $query = "select * from thu_cung where ten_thu_cung LIKE '%$search%' OR don_gia LIKE '%$search%'";
+                    $result = $conn->query($query);
+                    $num = $result->num_rows;
+                    if($num > 0 && $search != ""){
+                        while($row=$result->fetch_array()){
+                        ?> 
+                        <li class="main-product">
+                        <div class="img-product">
+                            <?php echo "<a href='detail.php?id=$row[ma_thu_cung]'>"; ?>
+                            <img class="img-prd"
+                                src="./img/<?php echo $row['hinh_anh']; ?>"
+                                alt="">
+                            <?php echo "</a>"; ?>
                         </div>
-                    </div>
-                </li>
-                <li class="main-product">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./img/cun1.jpg"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">Chó Shiba</h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">1299000đ</span>
+                        <div class="content-product">
+                            <h3 class="content-product-h3"><?php echo $row['ten_thu_cung']; ?></h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money"><?php echo $row['don_gia']." vnđ";?></span>
+                                </div>
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
                             </div>
-                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
                         </div>
-                    </div>
-                </li>
-                <li class="main-product">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./img/cun1.jpg"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">Chó Husky</h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">1599000đ</span>
+                        </li>
+                        <?php 
+                            }
+                        }     
+                    } else{
+                        $query = "select *from thu_cung";
+                        $result = $conn->query($query);
+                        while($row=$result->fetch_array()){
+                            ?>
+                            <li class="main-product">
+                            <div class="img-product">
+                                <?php echo "<a href='detail.php?id=$row[ma_thu_cung]'>"; ?>
+                                <img class="img-prd"
+                                    src="./img/<?php echo $row['hinh_anh']; ?>"
+                                    alt="">
+                                <?php echo "</a>"; ?>
                             </div>
-                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="main-product no-margin">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./img/cun1.jpg"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">Chó Ngao</h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">89000đ</span>
+                            <div class="content-product">
+                                <h3 class="content-product-h3"><?php echo $row['ten_thu_cung']; ?></h3>
+                                <div class="content-product-deltals">
+                                    <div class="price">
+                                        <span class="money"><?php echo $row['don_gia']." vnđ";?></span>
+                                    </div>
+                                    <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="main-product">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./img/cun1.jpg"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">Chó Alaska
-                        </h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">2199000đ</span>
-                            </div>
-                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="main-product">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./img/cun1.jpg"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">Chó Sói</h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">115000đ</span>
-                            </div>
-                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="main-product">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./img/cun1.jpg"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">Chó cỏ</h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">1295000đ</span>
-                            </div>
-                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="main-product no-margin">
-                    <div class="img-product">
-                        <img class="img-prd"
-                            src="./img/cun1.jpg"
-                            alt="">
-                    </div>
-                    <div class="content-product">
-                        <h3 class="content-product-h3">Chó Phú Quốc</h3>
-                        <div class="content-product-deltals">
-                            <div class="price">
-                                <span class="money">85000đ</span>
-                            </div>
-                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
-                        </div>
-                    </div>
-                </li>
+                            </li>
+                            <?php
+                        }
+                    }
+                ?>
             </ul>
         </div>
     </section>

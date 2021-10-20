@@ -9,7 +9,7 @@
                 <div class="item_menu" id="menutop">
                     <form>
                         <input type="text" name="search" placeholder="Tìm kiếm..." />
-                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <button type="submit" name="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                     <ul>
                         <li><a href="index.php">Trang Chủ</a></li>
@@ -33,9 +33,9 @@
                     <li><a href="about.php">Giới Thiệu</a></li>
                     <li><a href="about.php">TT Cá Nhân</a></li>
                 </ul>
-                <form>
+                <form action="index.php" method="get">
                     <input type="text" name="search" placeholder="Tìm kiếm..." />
-                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <button type="submit" name="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
             </div>
             <!-- The Modal -->
@@ -64,7 +64,7 @@
                         </div>
                         <div class="cart-total">
                             <strong class="cart-total-title">Tổng Cộng:</strong>
-                            <span class="cart-total-price">0VNĐ</span>
+                            <span class="cart-total-price">0 vnđ</span>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -74,6 +74,5 @@
                 </div>
             </div>
         </nav>
-
     </header>
     <!-- End header -->
