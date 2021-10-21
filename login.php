@@ -11,27 +11,49 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+    <?php
+    session_start();
+    require("./include/config.php");
+    if(isset($_POST['submit'])){      
+        $tai_khoan = $_POST['tai_khoan'];
+        $mat_khau = $_POST['mat_khau'];
+        if($tai_khoan != "" && $mat_khau != ""){
+            $query = "select email,mat_khau from khach_hang where email='$tai_khoan' and mat_khau='$mat_khau'";
+            $result = $conn->query($query);
+            $num = $result->num_rows;
+            if($num == 0){
+                $mess = "Email hoặc mật khẩu không đúng";
+            }else{
+                $_SESSION['email'] = $tai_khoan;
+                header("location:index.php");
+            }
+        }
+    }
+    ?>
     <div id="login">
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
-                            <h3 class="text-center text-info">Login</h3>
+                        <form id="login-form" class="form" action="" method="POST">
+                            <h3 class="text-center text-info">Đăng nhập</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
+                                <label for="username" class="text-info">Email:</label><br>
+                                <input type="text" name="tai_khoan" id="username" class="form-control" required 
+                                value="<?php if(isset($tai_khoan)) echo $tai_khoan; ?>">
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
+                                <label for="password" class="text-info">Mật khẩu:</label><br>
+                                <input type="password" name="mat_khau" id="password" class="form-control" required 
+                                value="<?php if(isset($mat_khau)) echo $mat_khau; ?>">
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            <label for="remember-me" class="text-info"><a href="#">Quên mật khẩu</a></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Đăng nhập">
+                                <span><?php if(isset($mess)) echo $mess; ?></span>
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="register.php" class="text-info">Register here</a>
+                                <a href="register.php" class="text-info">Đăng ký tài khoản</a>
                             </div>
                         </form>
                     </div>

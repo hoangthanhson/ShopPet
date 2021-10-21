@@ -31,15 +31,24 @@
     <?php
     while($row=$result->fetch_array()){
         ?>
-
-        <div class="card">
-        <img src="./img/<?php echo $row['hinh_anh']; ?>" alt="" style="width:50%">
-        <h1><?php echo $row['ten_thu_cung']; ?></h1>
-        <p  class="price"><?php echo $row['don_gia']." vnđ"; ?></p>
-        <p style="margin: 1rem 10rem;"><?php echo $row['mo_ta']; ?></p>
-        <button style="margin-bottom: 1rem;" bgcolor="blue" class="btn btn-primary">Thêm vào giỏ hàng</button>
+        <li class="main-product" style="margin-bottom: 2rem;">
+            <div class="img-product">
+                    <img class="img-prd"
+                        src="./img/<?php echo $row['hinh_anh']; ?>"
+                        alt="">
+            </div>
+            <div class="content-product">
+                <h3 class="content-product-h3"><?php echo $row['ten_thu_cung']; ?></h3>
+                <p style="margin: 0rem 5rem;"><?php echo $row['mo_ta']; ?></p>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money"><?php echo $row['don_gia']." vnđ";?></span>
+                        </div>
+                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+            </div>
+        </li>
         </div>
-
         <?php
     }
     ?>     
