@@ -4,61 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bai2</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
      <link rel="stylesheet" href="../css/style.css" /> 
      <link rel="stylesheet" href="../css/reponsive.css" /> 
 </head>
-<body>
 <script>
     function dieu_huong(){
         location.replace("../login.php");
     }
-</script>
-    <?php 
+</script> 
+<body>
+    <?php
     if(isset($_POST["submit"])){
-        $bankinh = $_POST["bankinh"];
-        define("PI",3.14);
-        if($bankinh <= 0){
-            $dientich = "Nhập lại bán kính";
-            $chuvi = "Nhập lại bán kính";
-        }else{
-            $dientich = PI*(pow($bankinh,2));
-            $chuvi = 2*PI*$bankinh;
+        $kq = 0;
+        $mang = 0;
+        $dayso = $_POST["dayso"];
+        $mang = explode(",",$dayso);
+        for($i=0;$i<count($mang);$i++){
+            $kq +=$mang[$i];
         }
     }
     ?>
-     <!-- header -->
-     <?php include "../include/header.php" ?>
+    <!-- header -->
+    <?php include "../include/header.php" ?>
     <!-- End header -->
     <div align='center' style="height: 550px;">
-    <form action="" method="POST">
+    <form action="" method="post">
         <table align="center" bgcolor="pink">
-            <tr bgcolor="orange" align="center">
-                <td colspan="2">DIỆN TÍCH VÀ CHU VI VÀ HÌNH TRÒN</td>
-            </tr>
-            <tr>
-                <td>Bán kính:</td>
-                <td><input type="text" name="bankinh" placeholder="Nhập bán kính" size="20" required 
-                    value="<?php if(isset($bankinh)) echo $bankinh; ?>">
+            <tr align="center" bgcolor="orange">
+                <td colspan="2">
+                    <h3>NHẬP VÀ TÍNH TRÊN DÃY SỐ</h3>
                 </td>
             </tr>
             <tr>
-                <td>Diện tích:</td>
-                <td><input type="text" name="dientich" readonly size="20" 
-                    value="<?php if(isset($dientich)) echo $dientich; ?>">
+                <td>Nhập dãy số:</td>
+                <td>
+                    <input type="text" name="dayso" size="20" placeholder="Nhập dãy số" required 
+                    value="<?php if(isset($dayso)) echo $dayso; ?>">
+                    <font color="red">(*)</font>
                 </td>
             </tr>
             <tr>
-                <td>Chu vi:</td>
-                <td><input type="text" name="chuvi" readonly size="20" 
-                    value="<?php if(isset($chuvi)) echo $chuvi; ?>">
+                <td></td>
+                <td>
+                    <input type="submit" name="submit" value="Tổng dãy số">
+                </td>
+            </tr>
+            <tr>
+                <td>Tổng dãy số:</td>
+                <td>
+                    <input type="text" name="kq" size="20" readonly 
+                    value="<?php if(isset($kq)) echo $kq; ?>">
                 </td>
             </tr>
             <tr align="center">
                 <td colspan="2">
-                    <input type="submit" name="submit" value="Tính">
+                    <font color="red">(*)</font>
+                    Các số được nhập cách nhau bằng dấu ","
                 </td>
             </tr>
         </table>

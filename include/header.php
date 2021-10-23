@@ -17,10 +17,10 @@
                     </form>
                     <ul>
                         <li><a href="index.php">Trang Chủ</a></li>
-                        <li><a href="product.php">Bài Tập</a></li>
+                        <li><a href="baitap.php">Bài Tập</a></li>
                         <li><a href="contact.php">Liên Hệ</a></li>
                         <li><a href="about.php">Giới Thiệu</a></li>
-                        <li><a href="about.php">TT Cá Nhân</a></li>
+                        <li><a href="me.php">TT Cá Nhân</a></li>
                     </ul>
 
                 </div>
@@ -32,10 +32,10 @@
             <div class="content-nav">
                 <ul>
                     <li><a href="index.php">Trang Chủ</a></li>
-                    <li><a href="product.php">Bài Tập</a></li>
+                    <li><a href="baitap.php">Bài Tập</a></li>
                     <li><a href="contact.php">Liên Hệ</a></li>
                     <li><a href="about.php">Giới Thiệu</a></li>
-                    <li><a href="about.php">TT Cá Nhân</a></li>
+                    <li><a href="me.php">TT Cá Nhân</a></li>
                 </ul>
                 <form action="index.php" method="get">
                     <input type="text" name="search" placeholder="Tìm kiếm..." />
