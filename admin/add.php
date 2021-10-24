@@ -52,12 +52,11 @@
     $so_luong = $_POST['so_luong'];
     $don_gia = $_POST['don_gia'];
     $loai_thu_cung = $_POST['loai_thu_cung'];
-    $hinh_anh = $_POST['hinh_anh'];
-    $photo=$_FILES['image']['name'];
-    $upload="uploads/".$photo;
-
+    $hinh_anh=$_FILES['image']['name'];
+		$upload="uploads/".$hinh_anh;
+    move_uploaded_file($_FILES['image']['tmp_name'], $upload);
     $query ="INSERT INTO thu_cung(ten_thu_cung, hinh_anh, mo_ta, so_luong, don_gia, loai_thu_cung) 
-    VALUES ('$ten_thu_cung','$photo','$mo_ta','$so_luong','$don_gia','$loai_thu_cung')";
+    VALUES ('$ten_thu_cung','$hinh_anh','$mo_ta','$so_luong','$don_gia','$loai_thu_cung')";
     $result = $conn->query($query);
     if(!$result){
       echo "câu truy vấn sai";

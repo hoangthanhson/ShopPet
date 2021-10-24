@@ -60,9 +60,10 @@
     $don_gia = $_POST['don_gia'];
     $loai_thu_cung = $_POST['loai_thu_cung'];
     $hinh_anh = $_POST['hinh_anh'];
-    $photo=$_FILES['image']['name'];    
-    $upload="uploads/".$photo;
-    $sql="UPDATE thu_cung SET ten_thu_cung='$ten_thu_cung',hinh_anh='$photo',mo_ta='$mo_ta',so_luong='$so_luong',don_gia='$don_gia',loai_thu_cung='$loai_thu_cung' WHERE ma_thu_cung='$id'";
+    $hinh_anh=$_FILES['image']['name'];
+		$upload="uploads/".$hinh_anh;
+    move_uploaded_file($_FILES['image']['tmp_name'], $upload);
+    $sql="UPDATE thu_cung SET ten_thu_cung='$ten_thu_cung',hinh_anh='$hinh_anh',mo_ta='$mo_ta',so_luong='$so_luong',don_gia='$don_gia',loai_thu_cung='$loai_thu_cung' WHERE ma_thu_cung='$id'";
     $result1 = $conn->query($sql);
     if($result1){
         $mess = "Cập nhật thành công!";
