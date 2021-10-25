@@ -22,14 +22,28 @@
     <?php include "./include/header.php" ?>
     <!-- End header -->
     <!-- content -->
-    
+    <?php
+    require("./include/config.php");
+        if(isset($_POST['submit'])){
+            $to = 'sonhoang.070400@gmail.com';
+            $title = $_POST['title'];
+            $content = $_POST['content'];
+            $from = $_POST['email'];    
+            if(mail($to, $title, $content,$from)){
+                $mess =  'Chúc mừng. Email của bạn được gửi thành công.';
+            } else{
+                $mess = 'Không thể gửi Email. Vui lòng thử lại.';
+            }
+        }
+    ?>
     <section class="wrapper">
         <div class="form">
             <form action="" id="form1">
-                <input type="text" id="femail" name="email" placeholder="Địa chỉ Email"><br>
-                <input type="text" id="fname" name="title" placeholder="Tiêu đề"><br>
-                <input type="text" id="fcontent" name="content" placeholder="Nội dung "><br>
-                <input type="submit" value="Gửi">
+                <input type="text" id="femail" name="email" placeholder="Địa chỉ Email" value="<?php if(isset($from)) echo $from; ?>"><br>
+                <input type="text" id="fname" name="title" placeholder="Tiêu đề" value="<?php if(isset($title)) echo $title; ?>"><br>
+                <input type="text" id="fcontent" name="content" placeholder="Nội dung " value="<?php if(isset($content)) echo $content; ?>"><br>
+                <input type="submit" name="submit" value="Gửi">
+                <span><?php if(isset($mess)) echo $mess; ?></span>
             </form>
             </div>
     </section>

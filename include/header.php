@@ -46,17 +46,22 @@
             <button id="cart">
                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 Giỏ Hàng
-            </button>
-            <button id="cart" onclick="dieu_huong()">
-                <i class="fa" aria-hidden="true"></i>
+            </button> 
                 <?php
                 if(isset($_SESSION['email']) && $_SESSION['email']){
+                    echo '<button id="cart" onclick="dieu_huong()">';
+                    echo '<i class="fa" aria-hidden="true"></i>';
                     echo "<span>".$_SESSION['email']."</span>";
+                    unset($_SESSION['email']);
+                    echo ' </button>';
+                    
                 }else{
+                    echo '<button id="cart" onclick="dieu_huong1()">';
+                    echo '<i class="fa" aria-hidden="false"></i>';
                     echo "Đăng nhập";
+                    echo '</button>';
                 }
-                ?>
-            </button>
+                ?>  
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <div class="modal-header">
