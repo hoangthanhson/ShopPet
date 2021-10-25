@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+        session_start();
 
+        ?>
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Sahil Kumar">
@@ -19,7 +22,11 @@
 
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
 </head>
-
+<script>
+    function dieu_huong(){
+        location.replace("./index.php");
+    }
+</script> 
 <body>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand -->
@@ -40,9 +47,18 @@
       </ul>
     </div>
     <form class="form-inline" action="/action_page.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="TÌm kiếm...">
-      <button class="btn btn-primary" type="submit">TÌm kiếm</button>
+      <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm...">
     </form>
+    <button class="btn" id="cart" onclick="dieu_huong()">
+                <i class="fa" aria-hidden="true"></i>
+                <?php
+                if(isset($_SESSION['email']) && $_SESSION['email']){
+                    echo "<span>".$_SESSION['email']."</span>";
+                }else{
+                    echo "Đăng nhập";
+                }
+                ?>
+            </button>
   </nav>
   <div class="container-fluid">
     <div class="row justify-content-center">

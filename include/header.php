@@ -48,7 +48,7 @@
                 Giỏ Hàng
             </button>
             <button id="cart" onclick="dieu_huong()">
-                <i class="fa" ar    ia-hidden="true"></i>
+                <i class="fa" aria-hidden="true"></i>
                 <?php
                 if(isset($_SESSION['email']) && $_SESSION['email']){
                     echo "<span>".$_SESSION['email']."</span>";

@@ -53,7 +53,7 @@
       <div class="col-md-6 mt-3 bg-info p-4 rounded">
         <h2 class="bg-light p-2 rounded text-center text-dark">Mã thú cưng : <?php echo $row['ma_thu_cung']; ?></h2>
         <div class="text-center">
-          <img src="./uploads/<?php echo $row['hinh_anh']; ?>" width="300" class="img-thumbnail">
+          <img src="../img/<?php echo $row['hinh_anh']; ?>" width="300" class="img-thumbnail">
         </div>
         <h4 class="text-light">Tên thú cưng : <?php echo $row['ten_thu_cung']; ?></h4>
         <h4 class="text-light">Mô tả : <?php echo $row['mo_ta']; ?> <?php ?></h4>
