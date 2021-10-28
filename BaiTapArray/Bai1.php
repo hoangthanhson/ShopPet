@@ -16,97 +16,85 @@
         location.replace("../login.php");
     }
 </script> 
-    <?php
-    if(isset($_POST["submit"])){
-        $n = $_POST["input"];
-    }
-    
-    ?>
      <!-- header -->
      <?php include "../include/header.php" ?>
     <!-- End header -->
-    <div align='center' style="height: 550px;">
-    <form action="" method="post">
-        <div class="container" align="center">
-            <div class="header">
-                <h3>
-                    Họ tên: Hoàng Thanh Sơn <br>
-                    Mssv: 60136746
-                </h3>
-            </div>
-            <div class="content">
-                <table align="center" bgcolor="blue"> 
-                    <tr align="center" bgcolor="orange">
-                        <td colspan="2">
-                            <h3>NHẬP VÀ THỰC HIỆN PHÉP TÍNH</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nhập n:</td>
-                        <td>
-                            <input type="text" name="input" id="" size="20" placeholder="Nhập n" required 
-                            value="<?php if(isset($n)) echo $n; ?>">
-                        </td>
-                    </tr>
-                    <tr align="center">
-                        <td colspan="2">
-                            <input type="submit" name="submit" value="Thực hiện">
-                        </td>
-                    </tr>
-                </table>  
-                <a href="../baitap.php">Quay lại</a>             
-            </div>           
-        </div>
-        <div align="center">
-        <?php
-        if(is_numeric($n) && $n > 0 && is_int($n+0)){
-            $rand = rand(-200,200);
-            $dayso = [];
-            $count = 0;
-            $dem = 0;
-            $tong = 0;
-            $vitri = null;
-            echo "Ngẫu nhiên ". $n ." số nguyên <br>";
-            for($i = 1; $i<= $n;$i++){
-                $dayso[$i] = rand(-200,200);
-                
+    <?php
+    if(isset($_POST["submit"])){
+        $n = $_POST["n"];
+        if(is_numeric($n) && is_int(0+$n) && $n > 0){
+            $mang = array();
+            for($i=0;$i<$n;$i++){
+                $mang[$i]= rand(-100,200);
             }
-            for($i = 1;$i<=count($dayso);$i++){
-                echo $dayso[$i] ." ";
-                if($dayso[$i] % 2 == 0){
+            $kq = "Mảng phát sinh: ".implode(" ",$mang)."\n";
+            $dem=0;
+            for($i=0;$i<count($mang);$i++){
+                if($mang[$i]%2==0){
                     $dem++;
                 }
-                if($dayso[$i] < 100){
-                    $count++;
-                }
-                if($dayso[$i] < 0){
-                    $tong +=$dayso[$i];
-                }
-                if($dayso[$i] == 0){
-                    $vitri = $i;
+            }
+            $kq1 = "Số phần tử chẵn trong mảng là: ".$dem."\n";
+            $dem=0;
+            for($i=0;$i<count($mang);$i++){
+                if($mang[$i]<100){
+                    $dem++;
                 }
             }
-            echo"<br>";
-            echo "Số lượng các số chẵn là: $dem <br>";
-            echo "Có $count bé hơn 100 <br>";
-            echo "Tổng các số âm là $tong <br>";
-            echo "Số 0 ở vị trí $vitri <br>";
-            echo "Mảng đã sắp xếp là: <br>";
-            sort($dayso);
-            function duyet($dayso){
-                $kq = "";
-                for($i=0;$i<count($dayso);$i++){
-                    $kq .= $dayso[$i] ." ";
+            $kq2 = "Số phần tử nhỏ hơn 100 trong mảng là: ".$dem."\n";
+            $s=0;
+            for($i=0;$i<count($mang);$i++){
+                if($mang[$i]<0){
+                    $s+=$mang[$i];
                 }
-                return $kq;
             }
-            $duyet = duyet($dayso);
-            echo $duyet;
+            $kq3 = "Tổng các số âm trong mảng bằng: ".$s."\n";
+            $index=0;
+            for($i=0;$i<count($mang);$i++){
+                if($mang[$i]==0){
+                    $index=$i+1;
+                }
+                else $index = "Không có!";
+            }
+            $kq4 = "Vị trí phần tử có giá trị = 0: ".$index."\n";
+            sort($mang);
+            $kq5 = "Mảng sắp xếp tăng dần: ".implode(" ",$mang);
+        } else{
+            $kq= "Không phải là số nguyên dương";
         }
-        ?>
-        </div>
+    }
+    ?>
+    <div align='center'>
+	<form action="" method="post">
+        <table align="center" bgcolor='pink'>
+            <tr align="center" bgcolor='orange'>
+                <th colspan="2">
+                    <h3>THỰC HIỆN PHÉP TÍNH</h3>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Nhập n:
+                </td>
+                <td>
+                    <input type="text" name="n" size="20" placeholder="Nhập n" required 
+                    value="<?php if(isset($n)) echo $n; ?>">
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <input type="submit" name="submit" value="Thực hiện">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                <textarea name="kq" id="" cols="30" rows="10" readonly><?php if(isset($kq)) echo $kq; if(isset($kq1)) echo $kq1; if(isset($kq2)) echo $kq2; if(isset($kq3)) echo $kq3; if(isset($kq4)) echo $kq4; if(isset($kq5)) echo $kq5; ?></textarea>
+                </td>
+            </tr>
+        </table>
+		<a href="../baitap.php">Quay lại</a> 
     </form>
-    </div>
+	</div>
     <!-- footer -->
 <?php include "../include/footer.php" ?>
     <!-- End footer -->

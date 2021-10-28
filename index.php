@@ -12,14 +12,9 @@
 </head>
 <script>
     function dieu_huong(){
-        location.replace("./index.php");
-    }
-</script> 
-<script>
-    function dieu_huong1(){
         location.replace("./login.php");
     }
-</script> 
+</script>  
 <body>
     <?php
     require("./include/config.php");

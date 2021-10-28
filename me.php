@@ -16,6 +16,11 @@
         location.replace("./login.php");
     }
 </script> 
+<script>
+    function dieu_huong1(){
+        location.replace("./login.php");
+    }
+</script> 
 <body>
     <!-- header -->
     <?php include "./include/header.php" ?>

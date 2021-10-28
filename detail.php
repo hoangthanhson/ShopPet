@@ -13,9 +13,9 @@
 </head>
 <script>
     function dieu_huong(){
-        location.replace("./login.php");
+        location.replace("./index.php");
     }
-</script> 
+</script>  
 <body>
     <?php
     require("./include/config.php");
