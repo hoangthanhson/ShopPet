@@ -49,14 +49,13 @@
                 }
             }
             $kq3 = "Tổng các số âm trong mảng bằng: ".$s."\n";
-            $index=0;
+            $index="Không có!";
             for($i=0;$i<count($mang);$i++){
                 if($mang[$i]==0){
                     $index=$i+1;
                 }
-                else $index = "Không có!";
             }
-            $kq4 = "Vị trí phần tử có giá trị = 0: ".$index."\n";
+            $kq4 = "Vị trí phần tử có giá trị bằng không là: ".$index."\n";
             sort($mang);
             $kq5 = "Mảng sắp xếp tăng dần: ".implode(" ",$mang);
         } else{
