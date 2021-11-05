@@ -3,6 +3,14 @@
 
         ?>
         <!-- header -->
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            }
+        </style>
         <header>
         <nav>
             <!-- bắt đầu nav-mobile -->

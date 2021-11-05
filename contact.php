@@ -25,23 +25,29 @@
     <?php
     require("./include/config.php");
         if(isset($_POST['submit'])){
-            $to = 'sonhoang.070400@gmail.com';
-            $title = $_POST['title'];
-            $content = $_POST['content'];
-            $from = $_POST['email'];    
-            if(mail($to, $title, $content,$from)){
-                $mess =  'Chúc mừng. Email của bạn được gửi thành công.';
-            } else{
-                $mess = 'Không thể gửi Email. Vui lòng thử lại.';
+            $to      = "son.ht.60cntt@ntu.edu.vn";
+            $subject = $_POST['title'];
+            $message = $_POST['content'];
+            $from = $_POST['email'];
+
+            $success = mail ($to,$subject,$message);
+
+            if( $success == true )
+            {
+                $messs = "Đã gửi mail thành công...";
+            }
+            else
+            {
+                $mess = "Không gửi đi được...";
             }
         }
     ?>
     <section class="wrapper">
         <div class="form">
-            <form action="" id="form1">
+            <form action="" id="form1" method="post">
                 <input type="text" id="femail" name="email" placeholder="Địa chỉ Email" value="<?php if(isset($from)) echo $from; ?>"><br>
-                <input type="text" id="fname" name="title" placeholder="Tiêu đề" value="<?php if(isset($title)) echo $title; ?>"><br>
-                <input type="text" id="fcontent" name="content" placeholder="Nội dung " value="<?php if(isset($content)) echo $content; ?>"><br>
+                <input type="text" id="fname" name="title" placeholder="Tiêu đề" value="<?php if(isset($subject)) echo $subject; ?>"><br>
+                <input type="text" id="fcontent" name="content" placeholder="Nội dung " value="<?php if(isset($message)) echo $message; ?>"><br>
                 <input type="submit" name="submit" value="Gửi">
                 <span><?php if(isset($mess)) echo $mess; ?></span>
             </form>
