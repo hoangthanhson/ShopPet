@@ -44,8 +44,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Mật khẩu:</label><br>
-                                <input type="password" name="mat_khau" id="password" class="form-control" required 
+                                <div style="display: flex;">
+                               <input type="password" name="mat_khau" id="password" class="form-control" required 
                                 value="<?php if(isset($mat_khau)) echo $mat_khau; ?>">
+                                <button id="btnpass"><img src="../img/eye.png" alt="" width="25px" height="25px"></button>
+                               </div>
                             </div>
                             <div class="form-group">
                             <label for="remember-me" class="text-info"><a href="#">Quên mật khẩu</a></label><br>
@@ -59,4 +62,13 @@
         </div>
     </div>
 </body>
+<script>
+    const ipnElement = document.querySelector('#password')
+    const btnElement = document.querySelector('#btnpass')
+
+    btnElement.addEventListener('click', function() {
+    const currentType = ipnElement.getAttribute('type')
+    ipnElement.setAttribute('type',currentType === 'password' ? 'text' : 'password')
+    })
+</script>
 </html>

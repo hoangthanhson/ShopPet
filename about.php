@@ -31,6 +31,27 @@
     <section class="introduction-section">
         <h1>Giới thiệu</h1>
         <p>ShopPet chuyên các loại thú cưng uy tín, tư vấn free chăm sóc thú cưng nhiệt tình</p>
+        <p align='justify'>
+            Khi cuộc sống ngày càng bộn bề, áp lực, 
+            con người lại có xu hướng chăm nuôi những em thú cưng xinh xắn để bầu bạn, tâm tình. 
+            Cũng như chúng ta, những người bạn 4 chân cần có một cuộc sống đầy đủ tiện nghi, 
+            hiện đại và quan trọng là một sức khỏe tốt. 
+            Tuy nhiên, việc lựa chọn được địa điểm mua các món đồ dùng cho cho chó mèo như thức ăn, quần áo,… 
+            có giá thành hợp lý và uy tín lại không phải là điều dễ dàng. Để đáp ứng nhu cầu này, 
+            Shop Pet ra đời với sứ mệnh cung cấp những sản phẩm tốt nhất cho thú cưng nhà bạn.
+        </p>
+        <br>
+        <p align='justify'>
+        Shop Pet tự tin là địa chỉ chuyên nghiệp và uy tín bậc nhất trong việc cung cấp các sản phẩm phụ kiện,
+        thức ăn cho chó, mèo... Đến với Shop Pet bạn sẽ tìm được mọi thứ bạn cần cho thú cưng nhà mình.
+        Bạn là người mới nuôi thú cưng lần đầu và chưa biết nên chọn loại thức ăn nào chất lượng, 
+        giúp các bé phát triển toàn diện?
+        Bạn đang nuôi một (vài) em thú cưng và muốn tìm hiểu cách chăm sóc chúng?
+        Bạn đang tìm mua các phụ kiện xinh xắn cho chó mèo?
+        Đừng lo, đến với Shop Pet, bạn sẽ nhận được sự tư vấn tận tình, chuyên nghiệp đến từ đội ngũ 
+        nhân viên bán hàng trẻ nhưng đầy nhiệt huyết và kinh nghiệm trong việc chăm sóc chó mèo. 
+        Hơn thế nữa, Shop Pet còn có các chương trình ưu đãi, khuyến mãi dành cho khách hàng diễn ra thường xuyên.
+        </p>
     </section>
     <section class="location-section">
         <h1>Địa chỉ của hàng</h1>
