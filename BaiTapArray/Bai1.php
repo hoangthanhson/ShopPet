@@ -63,7 +63,7 @@
         }
     }
     ?>
-    <div align='center'>
+    <div align='center' style="height: 550px;">
 	<form action="" method="post">
         <table align="center" bgcolor='pink'>
             <tr align="center" bgcolor='orange'>

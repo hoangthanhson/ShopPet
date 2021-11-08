@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2021 at 10:12 AM
+-- Generation Time: Nov 08, 2021 at 09:18 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -83,7 +83,9 @@ INSERT INTO `khach_hang` (`ma_kh`, `ho_kh`, `ten_kh`, `email`, `dia_chi`, `sdt`,
 (3, 'Lê', 'Trường', 'truong@gmail.com', 'tp Nha Trang, Khánh Hòa', '0865478294', '123456789'),
 (4, 'Nguyễn', 'Tùng', 'tung@gmail.com', 'tp Nha Trang, Khánh Hòa', '0864367897', '123456789'),
 (5, 'Huỳnh', 'Trọng', 'trong@gmail.com', 'Cam Lâm, Khánh Hòa', '0986435678', '123456789'),
-(6, 'Nguyễn', 'Tài', 'tai@gmail.com', 'Vạn Giả, Khánh Hòa', '0986456789', '123456789');
+(6, 'Nguyễn', 'Tài', 'tai@gmail.com', 'Vạn Giả, Khánh Hòa', '0986456789', '123456789'),
+(13, 'Lê', 'Anh', 'anh@gmail.com', 'Cam Lâm, Khánh Hòa', '098646765', '123456789'),
+(18, 'Sơn', 'Hoàng', 'son1@gmail.com', 'Cam Lâm, Khánh Hòa', '02342746', '1234');
 
 -- --------------------------------------------------------
 
@@ -132,7 +134,7 @@ INSERT INTO `thu_cung` (`ten_thu_cung`, `hinh_anh`, `mo_ta`, `so_luong`, `don_gi
 ('Ngao Tây Tạng', 'ngao.jpg', 'Chó ngao Tây Tạng hay còn gọi là Ngao Tạng, tên tiếng Anh là Tibetan Mastiff, là một giống chó Ngao được người Tây Tạng nuôi và huấn luyện để bảo vệ gia súc và bảo vệ cuộc sống của những người dân bản địa trên vùng núi Himalaya khỏi những con thú hoang như chó sói, hổ, gấu và để canh gác các tu viện ở Tây Tạng.', 20, 6000000, 1, 3),
 ('Pug', 'pug.jpg', 'Pug, hay thường được gọi là chó mặt xệ, là giống chó thuộc nhóm chó cảnh có nguồn gốc từ Trung Quốc, chúng có một khuôn mặt nhăn, mõm ngắn, và đuôi xoăn. Giống chó này có bộ lông mịn, bóng, có nhiều màu sắc nhưng phổ biến nhất là màu đen và nâu vàng. Cơ thể của Pug nhỏ gọn hình vuông với các cơ bắp rất phát triển.', 20, 2000000, 1, 4),
 ('Corgi', 'corgi.jpg', 'Corgi chân ngắn có đôi tai hình tam giác, dựng thẳng. Tai và mặt của các bé có tỷ lệ khá cân đối. Mõm của Corgi dài và nhọn, mắt chúng to tròn, miệng và khuôn hàm nhỏ nhưng cực kì sắc nhọn. Nhìn tổng thể, khuôn mặt của Corgi trông giống loài cáo nên chúng còn được gọi là Foxy Dog.', 25, 3000000, 1, 5),
-('Poodle', 'poodle', 'Chó Poodle là một giống chó ngoại nhập, tổ tiên của nó được phát hiện lần đầu tiên ở Tây Âu ít nhất là 400 năm trước, cụ thể tại một số nước như: Đức, Pháp, Anh,… Ban đầu chúng được coi là giống chó săn thủy cầm, phổ biến nhất là săn vịt, ngoài ra còn dùng để đánh hơi chim nước và nấm cục trong rừng.', 15, 2000000, 1, 6),
+('Poodle', 'poodle.jpg', 'Chó Poodle là một giống chó ngoại nhập, tổ tiên của nó được phát hiện lần đầu tiên ở Tây Âu ít nhất là 400 năm trước, cụ thể tại một số nước như: Đức, Pháp, Anh,… Ban đầu chúng được coi là giống chó săn thủy cầm, phổ biến nhất là săn vịt, ngoài ra còn dùng để đánh hơi chim nước và nấm cục trong rừng.', 15, 2000000, 1, 6),
 ('Abyssinian', 'abyssinian.jpg', 'Giống Mèo Abyssinian hay được gọi là mèo Aby vượt trội trong việc học các thủ thuật và chúng thậm chí còn giỏi hơn trong việc huấn luyện mọi người làm những gì chúng muốn. Mèo Abyssinians có thể sống từ 15 tuổi trở lên. Nhờ bản tính ham học hỏi, có tính xã hội cao, chúng có thể được dạy để đi bộ bằng dây xích. Mèo Aby được lai tạo ở Mỹ lần đầu tiên vào năm 1935.', 17, 10000000, 2, 7),
 ('Bali', 'bali.jpg', 'Giống mèo Bali có tên tiếng anh Balinese. Mèo Bali trông giống như một con Xiêm dài và có các màu sắc tương tự như màu Xiêm: hải cẩu, sô cô la, xanh lam và hoa cà. Mèo Bali rất năng động và có giọng hát. chúng muốn tham gia vào mọi thứ đang diễn ra trong nhà. Giữ một con mèo Bali trong nhà để bảo vệ nó khỏi ô tô, các bệnh lây lan bởi những con mèo khác và các cuộc tấn công từ các động vật khác. Mèo Bali là một con mèo hay nói chuyện; chúng sẽ nói chuyện với bạn nếu bạn để chúng.', 15, 9000000, 2, 8),
 ('Bengal', 'bengal.jpg', 'Bộ lông tuyệt đẹp của mèo Bengal có nhiều màu nền, từ vàng, gỉ, nâu và cam cho đến cát, trắng và ngà. Các đốm của mèo bengal cũng khác nhau về màu sắc, từ gỉ sắt hoặc ca cao và nâu sô cô la đến than hoặc đen. Một số bộ lông của mèo Bengal có các đốm hoặc hoa hồng nổi bật được tạo thành từ nhiều hơn một màu, thường là màu phụ tạo thành đường viền tối cho điểm. Áo khoác bengal cũng có họa tiết cẩm thạch: một hoặc nhiều màu xen kẽ vào màu nền. Mặc dù thường thấy nhất ở kiểu tabby đốm nâu, chúng cũn', 10, 6000000, 2, 9),
@@ -148,9 +150,10 @@ INSERT INTO `thu_cung` (`ten_thu_cung`, `hinh_anh`, `mo_ta`, `so_luong`, `don_gi
 ('Chào Mào', 'chaomao.jpg', 'Chào Mào cũng là một trong các loại chim cảnh thường nuôi trong nhà được nhiều người yêu thích. Loài chim này sống theo bầy đàn, ăn các loại côn trung nhỏ và hoa quả. Khi làm tổ chúng sẽ quấn các sợi rơm, cảnh cây nhỏ thành hình cái cốc nhỏ.Đặc điểm nhận dạng dễ nhất của loài chim cảnh Việt Nam này là phần mào hình tam giác nhô hẳn lên trên đầu. Có lẽ chính vì vậy mà cái tên Chào Mào ra đời. Lông chim có màu nâu nhạt, đậm nhất ở phần đầu và mào.\r\n\r\n', 50, 300000, 4, 19),
 ('Chích Chòe', 'chichchoe.jpg', 'Là một trong các loài chim cảnh nhỏ được nuôi phổ biến tại Việt Nam, chim Chích Chòe có thân hình nhỏ nhắn cùng đôi chân nhảy thoăn thoắt trên các cảnh cây. Loài chim này thường hót vào lúc giữa trưa hoặc tối muộn nên thường được nuôi ở các nơi công cộng như quán cafe, vườn chim,…Ở Việt Nam có hai loài Chích Chòe phổ biến là Chích Chòe Than và Chích Chòe Lửa. Hai loài nhỏ này khá giống nhau nhưng vẫn có một vài điểm khác biệt nhỏ.', 15, 300000, 4, 20),
 ('Vẹt', 'vet.jpg', 'Đây là loài chim cảnh có đa dạng các loài, chi trên thế giới và được ưa chuộng khi nuôi chim cảnh tại nhà. Thức ăn của Vẹt khá đơn giản, thường là các loại hạt, hoa quả, thực vật,… Song vẫn có một số ít các loài Vẹt có thể ăn thịt sống và xác thối.Vẹt được coi là một trong các loại chim cảnh đẹp và thông minh, có thể nói nhại tiếng người. Lông Vẹt rất rực rỡ và đa sắc màu, có thể là đỏ, vàng, xanh,… Khi nuôi loài chim cảnh Việt Nam này bạn sẽ khá vất vả do chúng vẫn còn tính hoang dã, bừa bộn, k', 50, 100000, 4, 21),
-('Vàng Anh', 'vanganh.jpg', 'Chim Vàng Anh luôn nổi bật với màu lông vàng rực. Chim mái và chim trống sẽ có ánh màu khác nhau đôi chút. Chim Vàng Anh cũng thuộc các loại chim sâu ở Việt Nam nên thường được nuôi để diệt sâu và trang trí.Khi nuôi bạn nên chú ý thức ăn cho Vàng An để tránh chim không thân thiện với chủ. Loài chim cảnh này thường lảng tránh và tỏ ra nhút nhát nếu không được cho ăn ngon.', 15, 200000, 4, 22),
+('Vàng Anh', 'vanganh.jpeg', 'Chim Vàng Anh luôn nổi bật với màu lông vàng rực. Chim mái và chim trống sẽ có ánh màu khác nhau đôi chút. Chim Vàng Anh cũng thuộc các loại chim sâu ở Việt Nam nên thường được nuôi để diệt sâu và trang trí.Khi nuôi bạn nên chú ý thức ăn cho Vàng An để tránh chim không thân thiện với chủ. Loài chim cảnh này thường lảng tránh và tỏ ra nhút nhát nếu không được cho ăn ngon.', 15, 200000, 4, 22),
 ('Sáo', 'sao.jpg', 'Chim Sáo là loài chim thông minh và có thể bắt chước tiếng người. Tuy nhiên các loại chim Sáo ở Việt Nam thường khá hung dữ, bởi vậy để thuần được một con chim Sáo phải là người yêu chim, có đam mê và lòng kiên nhẫn.Thuộc các loại chim cảnh đẹp nên không khó để thấy loài chim này trong nhà người nuôi chim tại Việt Nam. Thức ăn dành cho chim Sáo cũng khá dễ tìm như sâu bọ, cào cào, cơm,… Nếu bạn nuôi trong lồng thì nên cho ăn chuối, lạc trộn trứng, cơm,… thì sẽ hợp lý.', 10, 200000, 4, 23),
-('Khướu', 'khuou.jpg', 'Loài chim cảnh Việt Nam này hay sống theo đàn nhỏ ở các vùng núi, làm tổ trong các bụi cây, có mái che hoặc hình cái chén. Ở Việt Nam phổ biến hai loại Khướu là Khướu Mun và Khướu Ô.Khi nuôi chim Khướu bạn không nên nuôi trong lồng sắt vì nếu chim mổ, cắn phải hoặc chạm vào dẫn đến bị thương thì rất khó lành.', 20, 400000, 4, 24);
+('Khướu', 'khongtuoc.jpg', 'Loài chim cảnh Việt Nam này hay sống theo đàn nhỏ ở các vùng núi, làm tổ trong các bụi cây, có mái che hoặc hình cái chén. Ở Việt Nam phổ biến hai loại Khướu là Khướu Mun và Khướu Ô.Khi nuôi chim Khướu bạn không nên nuôi trong lồng sắt vì nếu chim mổ, cắn phải hoặc chạm vào dẫn đến bị thương thì rất khó lành.', 20, 400000, 1, 24),
+('Khổng Tước', 'khongtuoc.jpg', 'Chim màu sắc sặc sở', 10, 2500000, 4, 53);
 
 --
 -- Indexes for dumped tables
@@ -203,7 +206,7 @@ ALTER TABLE `gio_hang`
 -- AUTO_INCREMENT for table `khach_hang`
 --
 ALTER TABLE `khach_hang`
-  MODIFY `ma_kh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ma_kh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `loai_thu_cung`
@@ -215,7 +218,7 @@ ALTER TABLE `loai_thu_cung`
 -- AUTO_INCREMENT for table `thu_cung`
 --
 ALTER TABLE `thu_cung`
-  MODIFY `ma_thu_cung` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `ma_thu_cung` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Constraints for dumped tables

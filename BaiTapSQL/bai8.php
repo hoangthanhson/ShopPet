@@ -19,7 +19,7 @@
     <!-- header -->
     <?php include "../include/header.php" ?>
     <!-- End header -->
-<div align='center' style="height: 550px;">
+<div align='center' style="height: 570px;">
 <?php
     require("./config.php");
     $conn = new mysqli($hostname,$username,$password,$dbname);

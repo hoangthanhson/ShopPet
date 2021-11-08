@@ -16,13 +16,9 @@
         </li>
       </ul>
     </div>
-    <form class="form-inline" action="/action_page.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm...">
-    </form>
-    
                 <?php
                 if(isset($_SESSION['email']) && $_SESSION['email']){
-                    echo "<span  style='color:white'>".$_SESSION['email']."</span>";
+                    echo "<span  style='color:white'>".$_SESSION['email']."</span>"."&nbsp;";
                     ?>
                     <button class="btn" id="cart" onclick="dieu_huong()">
                     <i class="fa" aria-hidden="true"></i>
