@@ -19,12 +19,20 @@
     <form class="form-inline" action="/action_page.php">
       <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm...">
     </form>
-    <button class="btn" id="cart" onclick="dieu_huong()">
-                <i class="fa" aria-hidden="true"></i>
+    
                 <?php
                 if(isset($_SESSION['email']) && $_SESSION['email']){
-                    echo "<span>".$_SESSION['email']."</span>";
+                    echo "<span  style='color:white'>".$_SESSION['email']."</span>";
+                    ?>
+                    <button class="btn" id="cart" onclick="dieu_huong()">
+                    <i class="fa" aria-hidden="true"></i>
+                    <?php
+                    echo "<span><a href='logout.php' style='text-decoration: none;'>Đăng xuất</a></span>";
                 }else{
+                    ?>
+                    <button class="btn" id="cart" onclick="dieu_huong()">
+                    <i class="fa" aria-hidden="true"></i>
+                    <?php
                     echo "Đăng nhập";
                 }
                 ?>

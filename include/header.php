@@ -55,18 +55,25 @@
                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 Giỏ Hàng
             </button> 
-                <button id="cart" onclick="dieu_huong()">
-                <i class="fa" aria-hidden="true"></i>
                 <?php 
                 if(isset($_SESSION['email']) && $_SESSION['email']){
-                    echo $_SESSION['email'];
+                    echo "<span style='margin-top:12px;'>".$_SESSION['email']."</span>";
+                ?>
+                <button id="cart" onclick="dieu_huong()">
+                <i class="fa" aria-hidden="true"></i>
+                <?php
+                    echo "<span ><a href='logout.php' style='text-decoration: none;'>Đăng xuất</a></span>";
                 }
                 else{
+                ?>
+                <button id="cart" onclick="dieu_huong()">
+                <i class="fa" aria-hidden="true"></i>
+                <?php
                     echo "Đăng nhập";
                 }
                 ?>
                 </button>
-            <div id="myModal" class="modal">
+            <div id="myModal" class="modal" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Giỏ Hàng</h5>
